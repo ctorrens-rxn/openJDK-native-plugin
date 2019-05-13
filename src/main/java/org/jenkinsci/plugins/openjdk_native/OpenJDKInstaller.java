@@ -70,6 +70,7 @@ public class OpenJDKInstaller extends ToolInstaller{
                 OpenJDKConsoleAnnotator annotator = new OpenJDKConsoleAnnotator(log.getLogger());
                 byte[] errMsg = ("[OpenJDK ERROR] Switching OpenJDK via atlernatives to " + openjdkPackage.getPackageName() + " failed! " + OPENJDK_BIN + " may not exists or point to different java version!\n").getBytes(Charset.defaultCharset());
                 annotator.eol(errMsg,errMsg.length);
+                annotator.close();
             }
         } catch (IOException e){
             e.printStackTrace();
@@ -109,6 +110,7 @@ public class OpenJDKInstaller extends ToolInstaller{
                 OpenJDKConsoleAnnotator annotator = new OpenJDKConsoleAnnotator(log.getLogger());
                 byte[] errMsg = ("[OpenJDK ERROR] Installation of " + openjdkPackage.getPackageName() + " failed!").getBytes(Charset.defaultCharset());
                 annotator.eol(errMsg,errMsg.length);
+                annotator.close();
             }
         } catch (IOException e){
             e.printStackTrace();
